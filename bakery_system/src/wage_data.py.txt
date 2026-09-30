@@ -1,0 +1,26 @@
+def update_position_rate(position: str, new_base_rate: float, new_weekend_rate: float) -> tuple[bool, str]:
+    if new_base_rate <= 0:
+        return False, "Invalid base rate"
+    if new_weekend_rate <= 0:
+        return False, "Invalid weekend rate"
+
+    with open("wage_rates.json", "r") as in_file:
+        data = json.load(in_file)
+        
+    if position in data:
+        data[position]["base_rate"] = new_base_rate
+        data[position]["weekend_rate"] = new_weekend_rate
+    else:
+        return False, "Position not found"
+    with open("wage_rates.json", "w") as new_file:
+        json.dump(data, new_file)
+
+    return True, "Rates updated"
+"""
+    Update rates for an existing position.
+    Must validate new rates before updating.
+
+    Member 2 Name: Ryan Connolly
+    Student ID: 124326873
+    """
+pass

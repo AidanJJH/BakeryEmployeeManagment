@@ -1,0 +1,17 @@
+def get_employee_by_id(employee_id: str) -> Tuple[bool, [dict, str]]:
+        with open("employees.csv", "r") as in_file:
+            reader = csv.DictReader(in_file)
+            for row in reader:
+                if row["employee_id"] == employee_id:
+                    return True, row
+            return False, "Employee not found"
+            
+            
+    """
+    Retrieve employee record by ID.
+    Handles file reading and error cases for missing records.
+
+    Member 2 Name: Ryan Connolly
+    Student ID: 124326873
+    """
+    pass

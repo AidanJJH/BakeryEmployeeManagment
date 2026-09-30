@@ -1,0 +1,22 @@
+def validate_text_field(field_name: str, value: str, max_length: int = 30) -> tuple[bool, str]:
+    if len(value) > max_length:
+        return False, f" {field_name} too long"
+    if len(value) == 0:
+        return False, f" {field_name} is empty"
+    """
+    Validate a text field according to specified rules.
+
+    Args:
+        field_name (str): Name of the field being validated (for error messages)
+        value (str): The text value to validate
+        max_length (int): Maximum allowed length of the text. Defaults to 30
+
+    Returns:
+        tuple[bool, str]: (Validation status, Error message if invalid or empty string if valid)
+
+    Member 2 Name: Ryan Connolly
+    Student ID: 124326873
+    Member 4 Name: 
+    Student ID: 
+    """
+    pass
